@@ -1,5 +1,5 @@
 {
-  "name": "paradigmmc-mcserver",
+  "name": "vscode-mcserver",
   "displayName": "MC Server Config Utils",
   "description": "Utilities for configuring minecraft servers",
   "version": "0.0.1",
@@ -14,22 +14,21 @@
   ],
   "main": "./src/index.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "paradigmmc-mcserver.helloWorld",
-        "title": "Hello World"
-      }
-    ],
+    "commands": [],
     "languages": [
       {
         "id": "properties"
       }
+    ],
+    "tomlValidation": [
+      {
+        "regexMatch": "^.*server.toml$",
+        "url": "https://raw.githubusercontent.com/ParadigmMC/mcman/main/servertoml.schema.json"
+      }
     ]
   },
   "scripts": {
-    "lint": "eslint .",
-    "pretest": "npm run lint",
-    "test": "node ./test/runTest.js"
+    "lint": "eslint ."
   },
   "devDependencies": {
     "@types/vscode": "^1.79.0",
